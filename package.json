@@ -1,0 +1,19 @@
+{
+  "name": "full-stack-assignment-1",
+  "version": "1.0.0",
+  "description": "Full Stack assignment 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Richard Wilson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.6.2",
+    "nodemon": "^3.0.1"
+  }
+}
