@@ -10,8 +10,10 @@ mongoose.connect(URI, {
     dbName: "full-stack"
 }).then(() => {
     console.log("Database connected successfully!");
-    app.listen(PORT, console.log(`Listening to port ${PORT}`));
+    // app.listen(PORT, console.log(`Listening to port ${PORT}`));
 }).catch((err) => {
     console.error(err);
     process.exit(1);
 });
+
+module.exports = app;
