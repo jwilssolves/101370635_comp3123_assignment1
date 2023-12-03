@@ -5,6 +5,7 @@ const userRoute = express.Router();
 
 userRoute.use((req, res, next) => {
     try {
+        console.log(`USER PATH: ${req.url} ${req.hostname}`);
         const encrypted_password = Buffer.from(req.body.password).toString("base64");
         req.body.password = encrypted_password;
         return next();
@@ -26,8 +27,9 @@ userRoute.post("/signup", async (req, res) => {
 userRoute.post("/login", async (req, res) => {
     try {
         let user;
-        if (req.body.username.includes("@")) user = UserModel.findOne({ username: req.body.email, password: req.body.password });
-        else user = UserModel.findOne({ username: req.body.username, password: req.body.password });
+        if (req.body.username.includes("@")) user = await UserModel.findOne({ username: req.body.email, password: req.body.password });
+        else user = await UserModel.findOne({ username: req.body.username, password: req.body.password });
+        console.log(user);
 
         if (!user) return res.status(200).send({ status: false, username: req.body.username, message: "User not found" });
 

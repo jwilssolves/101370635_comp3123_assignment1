@@ -2,11 +2,13 @@ const express = require("express");
 // TODO: routes
 const { userRoute } = require("./routes/user_route");
 const { empRoute } = require("./routes/employee_route");
+const cors = require("cors");
 
 const app = express();
 
 const api_path = "/api/v1";
 
+app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
     if (req.method === "POST") {

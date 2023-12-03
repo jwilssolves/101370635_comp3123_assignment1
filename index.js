@@ -1,10 +1,10 @@
 const { app } = require("./app");
 const mongoose = require("mongoose");
 
-const PORT = 3000;
+const PORT = 3050;
 // TODO: Create URI on MongoDB Atlas and paste the URI here.
 // Uym4NuyoXx4mNjDk
-const URI = "mongodb+srv://wilsonjordan:Uym4NuyoXx4mNjDk@cluster0.lekjgxp.mongodb.net/?retryWrites=true&w=majority  ";
+const URI = "mongodb+srv://wilsonjordan:Uym4NuyoXx4mNjDk@cluster0.lekjgxp.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(URI, {
     dbName: "full-stack"
